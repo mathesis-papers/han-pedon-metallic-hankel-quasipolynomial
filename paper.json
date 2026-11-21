@@ -28,9 +28,9 @@
         "name": "Wenlin Zhang"
       }
     ],
-    "concept_doi": null,
+    "concept_doi": "10.5281/zenodo.24404937",
     "current_version": 2,
-    "doi": null,
+    "doi": "10.5281/zenodo.24404938",
     "lean_source": {
       "revision": "8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f",
       "url": "https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelResiduePolynomials.lean"
