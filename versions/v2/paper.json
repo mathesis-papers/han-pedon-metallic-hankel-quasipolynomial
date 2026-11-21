@@ -1,0 +1,66 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 148283,
+      "matches_public": true,
+      "path": "paper.pdf",
+      "public_sha256": "06da0efe3db8fda81093880ecc07196b1c01c7038e92856cbcef8d3b72f69e2b",
+      "sha256": "06da0efe3db8fda81093880ecc07196b1c01c7038e92856cbcef8d3b72f69e2b"
+    },
+    "source": {
+      "bytes": 22518,
+      "matches_public": true,
+      "path": "source.archive",
+      "public_sha256": "5d016ba17216f66ed84de92dc8d64622e72832afd35f0449f14e781e6dc25607",
+      "sha256": "5d016ba17216f66ed84de92dc8d64622e72832afd35f0449f14e781e6dc25607"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "Extending Han–Pedon's lower-shift results (2026), we prove their Conjecture C (arXiv:2610.36132v1, p. 6): for every n ≥ 1 and ℓ ≥ n+3, every residue subsequence of the shifted q-metallic Hankel determinants is a rational polynomial, from its first term, with period 2n(n+1) for even n and 4n(n+1) for odd n. Each polynomial is integer-valued on all integers. A complementary-minor formula reduces the determinant to a matrix of fixed size with polynomial dependence on the number of continued-fraction periods. We give a degree bound, rational generating functions, constant-coefficient recurrences and periodicity from the first term modulo every positive integer at every shift. Exact complementary-minor identities and the degree bound prove the affine laws extending Ovsienko–Pedon's golden shift-4 pattern (2023; published 2025).",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 2,
+    "doi": null,
+    "lean_source": {
+      "revision": "8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelResiduePolynomials.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "bytes": 148283,
+      "sha256": "06da0efe3db8fda81093880ecc07196b1c01c7038e92856cbcef8d3b72f69e2b",
+      "url": "/api/v1/collected-papers/han-pedon-metallic-hankel-quasipolynomial/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-21T12:36:44.124601068Z",
+    "record": "han-pedon-metallic-hankel-quasipolynomial",
+    "repository_name": "han-pedon-metallic-hankel-quasipolynomial",
+    "source": {
+      "bytes": 22518,
+      "sha256": "5d016ba17216f66ed84de92dc8d64622e72832afd35f0449f14e781e6dc25607",
+      "url": "/api/v1/collected-papers/han-pedon-metallic-hankel-quasipolynomial/files/source?version=2"
+    },
+    "title": "Extending Han–Pedon (2026): proof of Conjecture C for metallic Hankel determinants (arXiv:2610.36132v1, p. 6)",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-21T12:36:44.124601068Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "han-pedon-metallic-hankel-quasipolynomial"
+  }
+}

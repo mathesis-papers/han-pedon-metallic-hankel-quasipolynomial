@@ -1,0 +1,33 @@
+{
+  "id": "han-pedon-metallic-hankel-quasipolynomial",
+  "revision": 2,
+  "problem_ids": ["han-pedon-metallic-hankel-quasipolynomial"],
+  "topic": "Han–Pedon Conjecture C, arXiv:2610.36132v1, page 6",
+  "title": "Extending Han–Pedon (2026): proof of Conjecture C for metallic Hankel determinants (arXiv:2610.36132v1, p. 6)",
+  "creators": [
+    {"name": "Ma, Haobo", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Zhang, Wenlin", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "Extending Han–Pedon's lower-shift results (2026), we prove their Conjecture C (arXiv:2610.36132v1, p. 6): for every n ≥ 1 and ℓ ≥ n+3, every residue subsequence of the shifted q-metallic Hankel determinants is a rational polynomial, from its first term, with period 2n(n+1) for even n and 4n(n+1) for odd n. Each polynomial is integer-valued on all integers. A complementary-minor formula reduces the determinant to a matrix of fixed size with polynomial dependence on the number of continued-fraction periods. We give a degree bound, rational generating functions, constant-coefficient recurrences and periodicity from the first term modulo every positive integer at every shift. Exact complementary-minor identities and the degree bound prove the affine laws extending Ovsienko–Pedon's golden shift-4 pattern (2023; published 2025).",
+  "summary": "Every higher-shift residue is polynomial from m=0 and integer-valued on Z. Consequences include rational generating functions, linear recurrences, all-shift composite-modulus periodicity without a transient, and certified golden shift-4 affine laws.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelResiduePolynomials.lean",
+  "posing_source": {"url": "https://arxiv.org/abs/2610.36132v1", "locator": "Conjecture C, page 6", "authors": ["Guo-Niu Han", "Emmanuel Pedon"]},
+  "coverage": {
+    "lean_declaration": "D5.S3.Combinatorics.MetallicHankel.MetallicHankelResiduePolynomials.result",
+    "lean_statement": "Existence of the integral metallic series; all n ≥ 1, all ℓ ≥ n+3, every residue modulo the stated period, all m ≥ 0; the residue polynomials are integer-valued at every z in Z.",
+    "written_proofs": ["Complete complementary-minor argument", "Degree at most t(t-a)+a(a-1), with a=ℓ-(n+1), K0=ceil((r+a)/rho), t=K0*rho-r", "Period rho*M*lcm(1,...,max(1,d)) modulo every integer M ≥ 1 at higher shifts; all lower shifts are rho-periodic", "Integral rational generating function numerator of degree less than rho*(d+1) over (1-z^rho)^(d+1); recurrence (E^rho-1)^(d+1)", "Polynomial-growth dichotomy from the residue laws", "Third-shift RNA determinant equality with the golden shift-4 determinants, equivalently diagonal T(j+2,j) of OEIS A123634"],
+    "finite_checks": "checks.json specifies all ranges and values: cyclic data, moments, complementary minors, endpoint sequences, 48 direct golden determinants, 48 RNA determinant identities and 8100 modular Newton-basis identities.",
+    "finite_identity_proof": "The 220 exact complementary-minor identities at m=0,...,d_r, with bounds d_r=[50,37,26,17,10,5,2,65], and the written degree theorem prove all eight golden shift-4 affine laws for every m≥0. The main Lean declaration does not assert this additional proof.",
+    "siblings": [
+      {"source": "Han–Pedon, arXiv:2610.36132v1, Theorem B", "status": "prior proof cited", "scope": "bounded shift n+2"},
+      {"source": "Han–Pedon, arXiv:2502.05993v2, Theorem F", "status": "reproved and strengthened", "scope": "ultimate prime-modulus periodicity strengthened to every positive modulus from the first term, all shifts"},
+      {"source": "Ovsienko–Pedon, arXiv:2312.17009v2, (1.18)", "status": "earlier pattern credited; all-index affine laws proved", "scope": "n=1, ell=4"},
+      {"source": "Michael Somos, OEIS A123634, 2006, data and FORMULA section", "status": "earlier data credited; a further diagonal evaluated", "scope": "not posed in that entry: the eight affine laws for T(j+2,j), equivalently the third-shift RNA determinants"},
+      {"source": "Han–Pedon, arXiv:2502.05993v2, Conjecture E(2)", "status": "separate theorem cited", "scope": "the all-parameter unboundedness proof is distinct; its n=1, ell=4 case follows again from the affine laws"},
+      {"source": "Ovsienko–Pedon, arXiv:2312.17009v2, Conjecture 1.9", "status": "prior proof cited", "scope": "Han–Pedon Theorems B–D, first released in 2025"},
+      {"source": "Han–Pedon, arXiv:2610.36132v1, pp. 5–6", "status": "not covered", "scope": "reported short bilinear-recurrence searches at shift n+2"},
+      {"source": "Ovsienko–Pedon, arXiv:2312.17009v2, p. 9", "status": "not covered", "scope": "silver-series reconstruction uniqueness"}
+    ]
+  }
+}

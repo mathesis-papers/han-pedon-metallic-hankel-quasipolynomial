@@ -1,0 +1,699 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=24mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,longtable,xurl,hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,
+ pdfauthor={Haobo Ma; Wenlin Zhang},
+ pdftitle={Extending Han--Pedon (2026): proof of Conjecture C, arXiv:2610.36132v1, p. 6}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\D}[2]{\Delta_{#1}^{(#2)}}
+\newcommand{\coef}[1]{[q^{#1}]}
+\newcommand{\leanlink}[2]{\href{https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankel#1.lean}{\nolinkurl{#2}}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\setlength{\parskip}{3pt}
+\title{Extending Han--Pedon (2026):\\
+ proof of Conjecture C for metallic Hankel determinants\\
+ \large arXiv:2610.36132v1, p.~6}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+ \and Wenlin Zhang\\\small National University of Singapore\\
+ \small ChronoAI Pte Ltd, Singapore}
+\date{5 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Extending Han--Pedon's lower-shift results (2026), we prove their
+Conjecture C (\nolinkurl{arXiv:2610.36132v1}, p.~6): for every
+$n\ge1$ and $\ell\ge n+3$, every residue subsequence of the shifted
+$q$-metallic Hankel determinants is a rational polynomial, from its first
+term, with the stated period $2n(n+1)$ for even $n$ and $4n(n+1)$ for odd
+$n$. Each polynomial is integer-valued on all integers. A complementary-minor
+formula reduces the determinant to a matrix of fixed size, whose entries
+depend polynomially on the number of continued-fraction periods. We also
+give a degree bound, rational generating functions and constant-coefficient
+recurrences, and deduce periodicity from the first term modulo every positive
+integer, at every shift. A finite set of exact complementary-minor identities,
+together with the degree bound, proves the affine laws extending the golden
+shift-$4$ pattern of Ovsienko--Pedon (2023; published 2025).
+\end{abstract}
+\begin{center}\small Licensed under Creative Commons Attribution 4.0
+International (CC BY 4.0).\end{center}
+
+\section{Statement and relation to the source}
+Conjecture C of Han and Pedon \cite[p.~6]{HPplus} states that the higher-shift
+Hankel determinants of $q$-metallic numbers ``are quasi-polynomials of
+period'' $\rho_n$, with the explicit all-residue identity and integer values
+on all integers stated there. We prove this assertion, including the initial
+terms. Their earlier Conjecture E(2) concerns unboundedness at the same shifts
+\cite[p.~9]{HP}. The useful mechanism is that a large Hankel
+matrix has a complementary minor of fixed size when a normal index is
+chosen at a fixed distance from the target size.
+
+Put $[n]_q=1+q+\cdots+q^{n-1}$ and let
+$\Phi_n(q)=\sum_{m\ge0}f_mq^m\in\Z[[q]]$ satisfy
+\begin{equation}\label{quadratic}
+ q\Phi_n^2+\bigl((1+q^n)(1-q)-q[n]_q\bigr)\Phi_n=1,
+ \qquad f_0=1.
+\end{equation}
+For $m>0$ the coefficient of $f_m$ in this equation is $1$, and its other
+terms involve earlier coefficients. Thus an integral solution exists and is
+unique. Define
+\[
+ \D j\ell=\det(f_{\ell+i+k})_{0\le i,k<j},\quad \D0\ell=1,
+ \qquad
+ \rho=\begin{cases}2n(n+1),&n\text{ even},\\4n(n+1),&n\text{ odd}.\end{cases}
+\]
+The period below is a valid period for quasi-polynomiality, not a claim of
+minimality.
+
+\begin{theorem}\label{main}
+For every $n\ge1$ and $\ell\ge n+3$ there are polynomials
+$Q_{\ell,r}\in\Q[X]$, $0\le r<\rho$, such that
+\[
+ \D{r+m\rho}\ell=Q_{\ell,r}(m)\quad(m\ge0),\qquad
+ Q_{\ell,r}(z)\in\Z\quad(z\in\Z).
+\]
+More explicitly, set $a=\ell-(n+1)$,
+$K_0=\lceil(r+a)/\rho\rceil$, and $t=K_0\rho-r$. Then
+\begin{equation}\label{degree}
+ \deg Q_{\ell,r}\le t(t-a)+a(a-1),\qquad a\le t\le a+\rho-1,
+\end{equation}
+where a zero polynomial satisfies any nonnegative degree bound.
+\end{theorem}
+
+The lower-shift continued fractions are inherited from
+\cite[Theorem~7.3]{HP} and, in the golden case, \cite[\S3.3]{OP}.
+The normal-index determinant formula is \cite[Theorem~2.1]{Han}.
+Polynomial formulas for shifted Catalan determinants provide a related,
+different family \cite[\S1]{Cigler}. Han--Pedon's Theorem B
+\cite[p.~5]{HPplus} already proves bounded periodicity at shift $n+2$.
+Here all higher-shift residues are treated together,
+including $m=0$; zeros of intervening Hankel minors cause no division.
+Fixed-size determinant reductions also occur in Krattenthaler's
+orthogonal-polynomial formula \cite[Theorem~1]{Kratt}, whose hypotheses
+include nonzero norms at every index. Shifted periodic continued-fraction
+transformations in lattice-path families are developed by Wang, Xin and
+Zhai \cite{WXZ}. Here the normal-index construction accommodates the
+vanishing intermediate Hankel minors and supplies the specific metallic
+period and both endpoint laws.
+
+\section{Normal indices and the two ends of a continuant}
+We record the inherited continued-fraction data explicitly. Write
+$F=(\Phi_n-[n]_q)/q^{n+1}$, whose moments are $g_s=f_{n+1+s}$, and put
+$T=q[n]_q+(1+q^n)(1-q)$. For $n\ge2$, read the following states cyclically:
+\[
+ v_2,v_3,\ (w_{0,i},w_{1,i},w_{2,i})_{i=0}^{n-3},\ w_{0,n-2},\
+ (u_{0,i},u_{1,i},u_{2,i})_{i=0}^{n-2},\ v_0,v_1.
+\]
+An empty index range contributes no states. The triples $(k_p,b_p,D_p)$ are
+\begin{center}\small
+\begin{tabular}{@{}ccll@{}}\toprule
+state&$k_p$&$b_p$&$D_p(q)$\\\midrule
+$v_2$&$n-1$&$-1$&$T+q^{n+1}$\\
+$v_3$&$0$&$1$&$1$\\
+$w_{0,i}$&$n-i-2$&$-1$&$[n-i]_q-q$\\
+$w_{1,i}$&$i$&$-1$&$[i+2]_q$\\
+$w_{2,i}$&$0$&$-1$&$1-q$\\
+$u_{0,i}$&$n-i-2$&$-1$&$[n-i]_q$\\
+$u_{1,i}$&$i$&$-1$&$[i+2]_q-q$\\
+$u_{2,i}$&$0$&$-1$&$1-q$ for $i<n-2$; $1$ for $i=n-2$\\
+$v_0$&$n-1$&$1$&$T+q^{n+1}$\\
+$v_1$&$n$&$-1$&$T$\\\bottomrule
+\end{tabular}
+\end{center}
+For $n=1$ the cyclic list is
+$(0,-1,1+q),(0,1,1+q),(1,-1,1+q-q^2)$.
+These are the continued fraction of the $(n+1)$-shift, rather than the more
+complicated $(n+2)$-shift fraction in \cite{HPplus}.
+
+Set $s_0=0$, $s_{p+1}=s_p+k_p+1$, $V_{-1}=0$, $V_0=1$, and
+\begin{equation}\label{continuant}
+ V_{p+1}=D_pV_p-b_pq^{k_{p-1}+k_p+2}V_{p-1},\qquad
+ C_p(x)=x^{s_p}V_p(x^{-1}).
+\end{equation}
+At $p=0$ use the last cyclic value of $k_{p-1}$; its term multiplies zero.
+The degree bounds $\deg D_p\le k_p+1$ and $\deg V_p\le s_p$ follow
+from the table and induction. Also $V_p(0)=1$, so $C_p$ is monic of degree
+$s_p$. The convergent-error and Hankel determinant formulas give, with
+$h_p=-\prod_{i=0}^p b_i$ and $\mathcal L(x^v)=g_v$,
+\begin{align}
+ \mathcal L(C_px^v)&=0\quad(0\le v<s_p+k_p),&
+ \mathcal L(C_px^{s_p+k_p})&=h_p,\label{moments}\\
+ \D{s_{p+1}}{n+1}&=(-1)^{k_p(k_p+1)/2}h_p^{k_p+1}\D{s_p}{n+1}.
+ \label{normaldet}
+\end{align}
+Here \eqref{moments} is equivalently the usual convergent error
+$V_pF-N_p=q^{2s_p+k_p}R_p$, with $\deg N_p<s_p$ and $R_p(0)=h_p$.
+The H-fraction in the cited sources fixes this normalization.
+
+Let $L=3$ for $n=1$, and $L=6n-4$ otherwise; put
+$P=2n(n+1)$ and $\nu=1$ for even $n$, $\nu=2$ for odd $n$, so
+$\rho=\nu P$. Summing $k_p+1$ over the cyclic list gives $P$.
+For $n\ge2$, summation over the displayed ranges gives
+\[
+ \sum_{p<L}\frac{k_p(k_p+1)}2=4\binom n3+n(n+1)-1,\qquad
+ \prod_{p<L}h_p^{k_p+1}=(-1)^{n-1},\qquad \prod_{p<L}b_p=1.
+\]
+For the middle identity the signs of $h_p$ along the triples are
+\[
+ \begin{array}{c|ccc}
+ w\text{-triple}&(-1)^{i+1}&(-1)^i&(-1)^{i+1}\\
+ u\text{-triple}&(-1)^{n+i}&(-1)^{n+i+1}&(-1)^{n+i}
+ \end{array}
+\]
+and on $v_2,v_3,w_{0,n-2},v_0,v_1$ they are
+$1,1,(-1)^{n-1},1,-1$, respectively.
+Thus the multiplier in \eqref{normaldet} over a full cycle is $(-1)^n$.
+The three-state case $n=1$ gives the same identities directly.
+Consequently, for $K\ge1$ and $p=K\nu L$,
+\begin{equation}\label{normal}
+ N=s_p=K\rho,\quad \D N{n+1}=1,\quad
+ c=C_p,\quad d=C_{p-1},\quad \deg d=N-(n+1),
+\end{equation}
+and
+\begin{equation}\label{orth}
+ \mathcal L(cx^v)=0\ (v<N),\qquad
+ \mathcal L(dx^v)=-\mathbf1_{v=N-1}\ (v<N).
+\end{equation}
+The last relation uses $k_{p-1}=n$ and $h_{p-1}=-1$.
+
+\begin{lemma}\label{jets}
+For each $h\ge0$, the coefficients of $x^h$ in $c,d$ from
+\eqref{normal} are rational polynomials in $K$ of degree at most $h$.
+The same holds for $c^*(q)=q^Nc(q^{-1})$ and
+$d^*(q)=q^Nd(q^{-1})$ whenever $h<2K\rho$.
+\end{lemma}
+\begin{proof}
+Reversing \eqref{continuant} gives the transfer matrices
+\[
+ A_p(q)=\begin{pmatrix}q^{k_p+1}D_p(q^{-1})&-b_p\\1&0\end{pmatrix},
+ \qquad R=(A_{L-1}\cdots A_0)^\nu.
+\]
+Their cyclic product has constant term $I$. Here is a finite algebraic
+way of checking that identity uniformly in $n$. Write $M(e,b)=
+\left(\begin{smallmatrix}e&-b\\1&0\end{smallmatrix}\right)$,
+$A=M(1,-1)$, $B=M(-1,-1)$, $Z=M(0,-1)$,
+$V=M(2,-1)$, $W=M(0,1)$, $J=M(2,1)$. For $n\ge3$ the
+constant matrices occur, in chronological order, in the word
+\[
+ V,W,(A,A,B)^{n-2},Z,(A,Z,B),(A,A,B)^{n-3},(A,A,Z),J,B.
+\]
+Since $BAA=\left(\begin{smallmatrix}-1&0\\2&1\end{smallmatrix}\right)$
+and $(BAA)^2=I$, the product depends only on the parity of $n$.
+The products for $n=3,4$ are $I$; the three-state and eight-state lists
+give $I$ for $n=1,2$ as well. Thus $R(0)=I$ and
+$(c,d)^\top=R^K(1,0)^\top$. As $R-I$ is divisible by $q$,
+\[
+ [q^h]R^K=\sum_{v=0}^h\binom Kv[q^h](R-I)^v.
+\]
+This proves the first assertion, including its degree bound.
+
+For the other end use
+\[
+ B_p(q)=\begin{pmatrix}D_p&-b_pq^{k_{p-1}+k_p+2}\\1&0\end{pmatrix},
+ \qquad U=(B_{L-1}\cdots B_0)^\nu.
+\]
+Every $B_p(0)=\left(\begin{smallmatrix}1&0\\1&0\end{smallmatrix}\right)$,
+an idempotent matrix of trace $1$; hence $(\operatorname{tr}U)(0)=1$.
+Also $\det U=q^{2\rho}$, by $\prod b_p=1$ and
+$\sum(k_{p-1}+k_p+2)=2P$.
+The equation $\alpha^2-(\operatorname{tr}U)\alpha+q^{2\rho}=0$
+has a unique formal solution with $\alpha(0)=1$: successive coefficients
+are determined because the derivative at $(q,\alpha)=(0,1)$ is $1$.
+Put $\beta=q^{2\rho}/\alpha$ and
+$E=(U-\beta I)/(\alpha-\beta)$. Cayley--Hamilton gives
+\[
+ U^K=\alpha^KE+\beta^K(I-E).
+\]
+The second term is divisible by $q^{2K\rho}$. Below that degree, each
+entry is a coefficient of $\alpha^KE$, polynomial in $K$ of degree at
+most $h$ by the expansion of $(1+(\alpha-1))^K$.
+Finally $c^*=V_p$ and $d^*=q^{n+1}V_{p-1}$; these are the first column
+of $U^K$, with the indicated fixed monomial on its second entry.
+That monomial preserves the degree bound. The strict cutoff
+$h<2K\rho$ is retained throughout.
+\end{proof}
+
+\section{A fixed complementary minor}
+\begin{lemma}\label{inverse}
+Let $H=(g_{i+k})_{i,k<N}$ have determinant $1$ and let $c,d$ satisfy
+\eqref{orth}, with $c$ monic of degree $N$ and $\deg d<N$.
+Extend their coefficients by zero. Then
+\begin{equation}\label{bezout}
+ (H^{-1})_{ik}=-\sum_{v=0}^{k}
+ (c_{i+k+1-v}d_v-d_{i+k+1-v}c_v).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The polynomial $B(x,y)=-(c(x)d(y)-d(x)c(y))/(x-y)$ has degree at
+most $N-1$ in each variable, and its coefficient of $x^iy^k$ is the
+right side of \eqref{bezout}. Put $M_v(x)=\mathcal L_y(y^vB(x,y))$.
+For $0\le v<N-1$, applying $\mathcal L_y$ to
+$(x-y)y^vB$ and using \eqref{orth} gives $M_{v+1}=xM_v$.
+Thus $M_{N-1}=x^{N-1}M_0$; since its degree is at most $N-1$,
+$M_0$ is constant. The coefficient of $x^{N-1}$ in $B$ is $-d(y)$,
+so that coefficient in $M_{N-1}$ is $1$ by \eqref{orth}.
+Hence $M_v=x^v$ for $v<N$. In coefficients this says $BH=I$,
+which proves \eqref{bezout}. This argument also covers $N=1$.
+\end{proof}
+
+Fix $a\ge2$, $j\ge0$, and a normal size $N=j+t$ with $t\ge a$.
+The determinant $\D j{n+1+a}$ is the minor of $H_N$ on rows
+$0,\ldots,j-1$ and columns $a,\ldots,a+j-1$.
+Jacobi's complementary-minor identity therefore gives
+\begin{equation}\label{jacobi}
+ \D j{n+1+a}=(-1)^{aj}\det\mathcal B,
+\end{equation}
+where $\mathcal B$ is the $t\times t$ submatrix of $H_N^{-1}$ on
+rows $\{0,\ldots,a-1\}\cup\{a+j,\ldots,N-1\}$, in that order,
+and columns $j,\ldots,N-1$. The sign is $(-1)^{aj}$ because the
+sum of the chosen row and column indices is $aj+j(j-1)$.
+The empty target $j=0$ is included by the empty-determinant convention.
+
+For completeness, the entries require only endpoint coefficients:
+\begin{align}
+ \mathcal B_{ik}
+ &=-\sum_{\substack{0\le v\le i\\h=t+v-k-i-1\ge0}}
+     (c^*_h d_v-d^*_h c_v), &&0\le i<a,\label{low}\\
+ \mathcal B_{ik}
+ &=\sum_{v=0}^{t-k-1}
+   (c^*_{2t-1-i-k-v}d^*_v-d^*_{2t-1-i-k-v}c^*_v),
+     &&a\le i<t,\label{high}
+\end{align}
+for $0\le k<t$. Formula \eqref{low} is \eqref{bezout} with its
+indices exchanged, using symmetry of $H_N^{-1}$, and
+$c_{N-h}=c_h^*$, $d_{N-h}=d_h^*$.
+For \eqref{high}, reverse both indices in the Bezout polynomial:
+\[
+ x^{N-1}y^{N-1}B(x^{-1},y^{-1})
+ =\frac{c^*(x)d^*(y)-d^*(x)c^*(y)}{x-y}.
+\]
+Extracting its coefficient of $x^{t-1-i}y^{t-1-k}$ gives the displayed
+formula, with the positive sign. Every depth occurring in
+\eqref{low}--\eqref{high} is strictly less than $2t$.
+
+\section{Every residue, including its first term}
+\begin{proof}[Proof of Theorem~\ref{main}]
+Fix $r\in\{0,\ldots,\rho-1\}$ and use $K_0,t$ from the statement.
+For $m\ge0$ choose
+\[
+ K=K_0+m,\quad j=r+m\rho,\quad N=K\rho=j+t.
+\]
+Because $a\ge2$, $K_0\ge1$. In particular all normal-index relations
+hold even at $m=0$. The complementary dimension $t$ is independent of
+$m$. All endpoint depths in \eqref{low}--\eqref{high} satisfy
+$h<2t\le2N=2K\rho$. Lemma~\ref{jets} therefore makes every entry of
+$\mathcal B$ a fixed rational polynomial in $K$, for every $m\ge0$.
+Its determinant is a rational polynomial as well. Since $\rho$ is even,
+$(-1)^{aj}=(-1)^{ar}$. Substitution of $K_0+X$ into this determinant,
+and multiplication by $(-1)^{ar}$, constructs $Q_{\ell,r}$.
+
+For the degree bound, each summand of \eqref{low} has degree at most
+$t+2v-k-i-1\le t+i-k-1$. Each summand of \eqref{high} has degree at
+most $2t-1-i-k$. Every term of the determinant thus has degree at most
+\[
+ \sum_{i=0}^{a-1}(t+i-1)+\sum_{i=a}^{t-1}(2t-1-i)
+ -\sum_{k=0}^{t-1}k=t(t-a)+a(a-1).
+\]
+This proves \eqref{degree}.
+
+Lastly, $Q_{\ell,r}(m)$ is an integer for every $m\ge0$ by
+\eqref{jacobi}. If $d$ bounds its degree, its Newton expansion is
+\[
+ Q_{\ell,r}(X)=\sum_{v=0}^{d}(\Delta^v Q_{\ell,r})(0)\binom Xv.
+\]
+The forward differences here are integers. For $z<0$,
+$\binom zv=(-1)^v\binom{-z+v-1}{v}\in\Z$; the nonnegative case is
+immediate. Therefore $Q_{\ell,r}(z)\in\Z$ for every integer $z$.
+\end{proof}
+
+\begin{corollary}\label{modular}
+For fixed $n\ge1$ and $\ell\ge n+3$, let $d\ge0$ bound the degrees of
+all residue polynomials. For every integer $M\ge1$, the sequence
+$(\D j\ell\bmod M)_{j\ge0}$ has period $\rho M L_d$, where
+$L_d=\operatorname{lcm}(1,\ldots,\max(1,d))$.
+In particular $\rho M d!$ is also a valid period.
+One possible explicit bound is
+$d=a(a-1)+(a+\rho-1)(\rho-1)$.
+\end{corollary}
+\begin{proof}
+Put $T=ML_d$. For $1\le i\le d$, the identity
+$\binom Ti=(T/i)\binom{T-1}{i-1}$ shows that $M$ divides $\binom Ti$,
+because $T/i$ is a multiple of $M$. Vandermonde's identity gives
+\[
+ \binom{m+T}{v}-\binom mv
+ =\sum_{i=1}^v\binom Ti\binom m{v-i}\equiv0\pmod M
+ \quad(0\le v\le d).
+\]
+Apply the integral Newton expansion of each residue polynomial.
+Advancing $j$ by $\rho T$ preserves its residue and advances $m$ by $T$.
+Since $L_d$ divides $d!$, the factorial bound follows as well.
+The explicit degree bound follows by maximizing
+\eqref{degree} over $a\le t\le a+\rho-1$.
+\end{proof}
+
+\section{Consequences and sibling statements}
+\begin{corollary}\label{allshifts}
+For every $n\ge1$ and $\ell\ge0$, the sequence $(\D j\ell)_{j\ge0}$
+is periodic from $j=0$ modulo every positive integer $M$.
+For $\ell\le n+2$ a valid period is $\rho$; for $\ell\ge n+3$ a valid
+period is $\rho M L_d$, with $d,L_d$ as in Corollary~\ref{modular}.
+\end{corollary}
+\begin{proof}
+For $\ell\le n+1$, use Han--Pedon's Theorem B \cite{HP} and the
+golden case of Ovsienko--Pedon's Theorem 1.6 \cite{OP}. For $\ell=n+2$,
+use Han--Pedon's Theorem B \cite{HPplus}. Their periodicity or
+antiperiodicity becomes periodicity with period $\rho$ over $\Z$, hence
+modulo $M$. At higher shifts apply Corollary~\ref{modular}.
+This strengthens the ultimate prime-modulus periodicity of
+Han--Pedon's Theorem F \cite[p.~9]{HP}.
+\end{proof}
+
+\begin{corollary}\label{rational}
+For fixed $n\ge1$ and $\ell\ge0$, there are an integer $d\ge0$ and
+$R\in\Z[z]$, with $\deg R<\rho(d+1)$, such that
+\[
+ \sum_{j\ge0}\D j\ell z^j=\frac{R(z)}{(1-z^\rho)^{d+1}}.
+\]
+Writing $E$ for the shift $(Eu)_j=u_{j+1}$, one has
+$(E^\rho-1)^{d+1}\D j\ell=0$ for every $j\ge0$.
+One can take $d=0$ for $\ell\le n+2$, and the degree bound of
+Corollary~\ref{modular} otherwise.
+\end{corollary}
+\begin{proof}
+The lower shifts are $\rho$-periodic by the results just cited.
+For the higher shifts write $Q_{\ell,r}(m)=\sum_{v=0}^d c_{r,v}\binom mv$
+with $c_{r,v}\in\Z$. The identity
+$\sum_{m\ge0}\binom mv u^m=u^v/(1-u)^{v+1}$ gives
+\[
+ R(z)=\sum_{r=0}^{\rho-1}\sum_{v=0}^d
+ c_{r,v}z^{r+\rho v}(1-z^\rho)^{d-v}.
+\]
+This is integral and has the asserted degree. On each residue class,
+$E^\rho-1$ is a forward difference in $m$, which annihilates a polynomial
+of degree at most $d$ after $d+1$ applications. These are linear
+recurrences, not the short bilinear recurrences discussed in \cite{HPplus}.
+\end{proof}
+
+\begin{corollary}\label{golden}
+For $n=1$, $\ell=4$, and every integer $m\ge0$, the eight polynomials are
+\[
+\begin{array}{c|rrrrrrrr}
+r&0&1&2&3&4&5&6&7\\\hline
+Q_{4,r}(m)&1+4m&2+4m&0&-2-4m&-3-4m&-4-4m&0&4+4m
+\end{array}
+\]
+Consequently this sequence is unbounded and is not eventually periodic
+over $\Z$. Modulo $M\ge1$, a valid period is $8M/\gcd(M,4)$.
+\end{corollary}
+\begin{proof}
+The pattern begins in Ovsienko--Pedon \cite[p.~8, (1.18)]{OP}; the
+all-index identities here follow from a degree bound and finite exact
+identities. For each residue, the complementary dimensions and bounds
+in Theorem~\ref{main} are
+\[
+\begin{array}{c|rrrrrrrr}
+r&0&1&2&3&4&5&6&7\\\hline
+t&8&7&6&5&4&3&2&9\\
+d_r=t(t-2)+2&50&37&26&17&10&5&2&65.
+\end{array}
+\]
+Equations \eqref{continuant} and \eqref{low}--\eqref{high}, using
+$K=\lceil(r+2)/8\rceil+m$, give the asserted affine value at every
+$m=0,\ldots,d_r$. The 220 exact integer identities, with all their values,
+are in \texttt{checks.json}; \texttt{golden\_polynomial\_identities} in
+\texttt{verify.py} evaluates precisely these formulas by fraction-free
+elimination. Two polynomials of degree at most $d_r$ agreeing at $d_r+1$
+distinct rational points are equal, so these finite identities and
+Theorem~\ref{main} prove the displayed laws for every $m\ge0$.
+The residue $r=0$ proves unboundedness, and hence excludes eventual
+periodicity. Advancing $m$ by $M/\gcd(M,4)$ changes each affine law by a
+multiple of $M$, which proves the modular assertion.
+\end{proof}
+
+\begin{corollary}\label{rna}
+Let $A(x)=\sum_{s\ge0}a_sx^s$, $a_0=1$, be the RNA secondary-structure
+series \textup{OEIS A004148}, satisfying
+$x^2A^2-(1-x+x^2)A+1=0$.
+Then $\det(a_{3+i+k})_{0\le i,k<r+8m}=Q_{4,r}(m)$, with the eight
+affine laws in Corollary~\ref{golden}. Equivalently these laws evaluate
+the diagonal $T(j+2,j)$ of the number wall \textup{A123634} \cite{OEISwall}.
+\end{corollary}
+\begin{proof}
+The identity $\Phi_1(q)=1+q-qA(-q)$ follows by substitution into
+\eqref{quadratic} and uniqueness; see also \cite[(1.6)--(1.8)]{Pedon}.
+Thus $f_{4+i+k}=(-1)^{i+k}a_{3+i+k}$. The row and column signs in
+the determinant cancel, giving $\D j4=\det(a_{3+i+k})_{i,k<j}$.
+The number-wall indexing in \cite{OEISwall} gives
+$T(j+2,j)=\det(a_{3+i+k})_{i,k<j}$. Apply Corollary~\ref{golden}.
+\end{proof}
+
+More generally, Theorem~\ref{main} gives a precise growth dichotomy at
+every higher shift. If all $Q_{\ell,r}$ are constant, the sequence is
+$\rho$-periodic. Otherwise let $d_*=\max_r\deg Q_{\ell,r}\ge1$. Then
+\[
+ \max_{0\le j\le J}|\D j\ell|=\Theta(J^{d_*})\qquad(J\longrightarrow\infty).
+\]
+Indeed, the finitely many polynomials give the upper bound; a residue of
+degree $d_*$ and its nonzero leading coefficient give the lower bound
+at the largest index in that residue not exceeding $J$.
+This dichotomy alone does not exclude constant residues at an arbitrary
+higher shift. The all-parameter unboundedness assertion of Conjecture E(2)
+is a separate theorem, stated by
+\href{https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelUnbounded.lean}{\nolinkurl{MetallicHankelUnbounded.result}};
+it is not a consequence of quasi-polynomiality alone.
+
+\section{Coverage and mathematical evidence}
+\begingroup\small
+\begin{longtable}{@{}p{0.46\linewidth}p{0.48\linewidth}@{}}\toprule
+Source item & Coverage\\\midrule
+Han--Pedon \cite[p.~6, Conjecture C]{HPplus}
+ & Proved: all $n\ge1$, all $\ell\ge n+3$, every residue, $m=0$
+ included, integer values at negative integers.\\
+Han--Pedon \cite[p.~5, Theorem B]{HPplus}; earlier E(1) \cite{HP}
+ & Prior proof cited: Han--Pedon (2026); the bounded $(n+2)$-shift is
+ not reproved here.\\
+Han--Pedon \cite[Theorem A]{HPplus}
+ & Prior proof cited (2026): eventual periodicity of the shift-$(n+2)$
+ continued fraction. The proof above uses the simpler $(n+1)$-shift.\\
+Han--Pedon \cite[p.~9, Conjecture E(2)]{HP}
+ & Separate theorem cited above; Corollary~\ref{golden} reproves
+ the case $n=1$, $\ell=4$. The general case is supplied by the linked
+ theorem, not by quasi-polynomiality.\\
+Han--Pedon \cite[pp.~5--6, paragraphs following Theorem B]{HPplus}
+ & Not covered: the searches for short bilinear recurrences at the
+ $(n+2)$-shift.\\
+Han--Pedon \cite[p.~9, Theorem F]{HP}
+ & Reproved; prior proof Han--Pedon (2026) gives ultimate
+ prime-modulus periodicity. Corollary~\ref{allshifts} strengthens the
+ determinant assertion to every modulus from the first term.
+ Han's general finite-field theorem (2014/2016) \cite[Theorem~1.1]{Han}
+ underlies the earlier prime-modulus proof.\\
+Ovsienko--Pedon \cite[p.~8, (1.18)]{OP}
+ & Earlier golden shift-$4$ pattern credited (2023/2025);
+ Corollary~\ref{golden} gives its full affine laws and a modular period.\\
+Somos, OEIS A123634 (2006), data and FORMULA section \cite{OEISwall}
+ & Earlier number-wall data credited. The two stated diagonal formulas
+ concern $T(j,j)$ and $T(j+1,j)$; Corollary~\ref{rna} proves the
+ $T(j+2,j)$ formulas, not posed in that entry.\\
+Ovsienko--Pedon \cite[p.~9, silver aperiodicity comment]{OP}
+ & The linked unboundedness theorem implies nonperiodicity for every
+ $\ell\ge5$, confirming the comment.\\
+Ovsienko--Pedon \cite[Conjecture 1.9(a),(b)]{OP}
+ & Prior proof cited: Han--Pedon \cite[Theorems B--D]{HP}; lower-shift
+ values, contiguity and bilinear recurrences are not reproved.\\
+Ovsienko--Pedon \cite[p.~9, silver uniqueness question]{OP}
+ & Not covered: uniqueness of a series with the four displayed Hankel
+ rows is a different reconstruction question.\\
+Han--Pedon \cite[p.~23, Remark 4.5]{HPplus}
+ & Not covered: the asserted signed-difference formula at shift $n+2$
+ is distinct from the higher-shift polynomial law.\\
+Ovsienko--Pedon \cite[Theorem 1.7]{OP}
+ & Prior proof cited (2023/2025): golden-series uniqueness from four
+ Hankel rows. No new reconstruction theorem is proved here.\\
+Rational generating functions, linear recurrences and the growth dichotomy
+ & Not posed in these sources; proved here from the residue laws.
+ No minimal period or exact degree is asserted.\\\bottomrule
+\end{longtable}
+\endgroup
+
+The following source links specify the formal statements at revision
+\[
+\texttt{8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f}.
+\]
+In the namespace
+\texttt{D5.S3.Combinatorics.MetallicHankel},
+\href{https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelResiduePolynomials.lean}{\nolinkurl{MetallicHankelResiduePolynomials.result}}
+proves existence of the metallic series and the residue and integer-valuedness
+assertions of Theorem~\ref{main}: all residue identities from $m=0$, and integer values
+on $\Z$. The definition of that assertion is
+\href{https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelQuasipolynomialDefs.lean}{\nolinkurl{Trureturing.OpenProblems.HanPedonShiftedQMetallicHankel.claim}}.
+Supporting declarations give the precise algebraic ingredients:
+\begin{itemize}
+\item
+\href{https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelUnbounded.lean}{\nolinkurl{MetallicHankelUnbounded.normal_family}}:
+the normal indices, continuants and moment relations in \eqref{normal}--\eqref{orth}.
+\item
+\href{https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelEndpointJets.lean}{\nolinkurl{MetallicHankelEndpointJets.continuant_endpoint_jets}}:
+the four coefficient laws of Lemma~\ref{jets}, with degree at most $h$
+and the strict cutoff $h<2K\rho$ for the common reversals.
+\item
+\href{https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelEndpointSpectral.lean}{\nolinkurl{MetallicHankelEndpointSpectral.transfer_spectral_remainder}}:
+the unit spectral branch below determinant depth.
+\item
+\href{https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelComplementaryMinor.lean}{\nolinkurl{MetallicHankelComplementaryMinor.shifted_hankel_boundary}}:
+the signed fixed-dimensional formula \eqref{jacobi}.
+\end{itemize}
+The explicit bound \eqref{degree}, Corollaries~\ref{modular}--\ref{rational}
+and the growth dichotomy have written proofs above.
+Corollary~\ref{golden} combines the written degree bound with the 220
+finite exact identities specified in its proof; it is not an additional
+claim about the Lean main declaration.
+Corollary~\ref{rna} has the written coefficient-sign proof above.
+The integer-arithmetic script \texttt{verify.py} also gives finite
+checks: cyclic identities for $1\le n\le40$; eight normal determinants
+and 648 moment equations for $1\le n\le4$, $K=1,2$; 252 complementary
+determinants for $1\le n\le4$, $a=2,3,4$, $0\le j\le20$; and 120
+endpoint coefficient sequences for $1\le n\le6$, $0\le h\le4$,
+$1\le K\le7$. These computations concern the stated finite ranges;
+the all-parameter conclusions follow from the proofs.
+The script also checks 48 RNA determinant identities and 8100 modular
+Newton-basis identities, for $0\le d\le8$, $1\le M\le20$,
+$-4\le m\le4$, $0\le v\le d$.
+
+For example, at $n=1$, $\ell=4$, the direct determinants at three
+successive points of each residue class are
+\[
+\begin{array}{c|rrrrrrrr}
+r&0&1&2&3&4&5&6&7\\\hline
+\D r4&1&2&0&-2&-3&-4&0&4\\
+\D{r+8}4&5&6&0&-6&-7&-8&0&8\\
+\D{r+16}4&9&10&0&-10&-11&-12&0&12
+\end{array}
+\]
+These 24 direct determinants agree with the first three values of the
+affine laws in Corollary~\ref{golden}. The checker also gives the first
+six direct values of every residue. The all-index proof uses the 220
+degree-bounded identities, not extrapolation from these 48 direct values.
+
+\appendix
+\section{Scope of the pinned declarations}
+Every link below selects the revision specified in \S6.
+The file-name prefix is \texttt{MetallicHankel}; thus
+\texttt{EndpointJets} denotes \texttt{MetallicHankelEndpointJets.lean}.
+Except for the claim namespace stated in \S6, declaration names have
+prefix \texttt{D5.S3.Combinatorics.MetallicHankel} followed by the
+full file stem. A definition specifies a proposition or construction;
+it is not itself a proof. The table separates ingredients of the residue
+theorem from the separate boundedness and unboundedness results.
+
+\begingroup\footnotesize
+\begin{longtable}{@{}p{0.40\linewidth}p{0.55\linewidth}@{}}\toprule
+File and declaration & Mathematical scope\\\midrule
+\endhead
+\leanlink{Defs}{Defs.IsMetallic, shiftedHankel, claim}
+ & Defining quadratic, Hankel determinants, and the $n\ge2$ bounded
+ shift-$(n+2)$ assertion.\\
+\leanlink{Data}{Data.cycle_data, cycle_sign}
+ & The $n\ge2$ cyclic fraction states and their determinant signs.\\
+\leanlink{Transitions}{Transitions.metallic_approximation}
+ & The continued-fraction approximants satisfy the metallic quadratic
+ and its coefficient conditions for $n\ge2$.\\
+\leanlink{Determinants}{Determinants.zero_run}
+ & Determinant transition and vanishing gaps from the specified normal
+ moment equations.\\
+\leanlink{Transfer}{Transfer.top_word_identity, block_transfer}
+ & Reversed cyclic transfer identity for $n\ge2$ and propagation of
+ the coefficient state.\\
+\leanlink{Period}{Period.propagate}
+ & Propagation of normal-index data to determinant values and
+ (anti)periodicity under its cyclic hypotheses.\\
+\leanlink{}{MetallicHankel.result}
+ & Bounded shift $n+2$, for $n\ge2$: sign $(-1)^n$ over $2n(n+1)$
+ and values in $\{-2,-1,0,1,2\}$.\\
+\leanlink{UnboundedDefs}{UnboundedDefs.claim}
+ & The proposition that every bound is exceeded at each shift
+ $\ell\ge n+3$, for every $n\ge1$.\\
+\leanlink{UnboundedCofactor}{UnboundedCofactor.normal_cofactor}
+ & The normal cofactor identity relating a two-step shifted determinant
+ to the lowest two coefficients of the normal polynomials.\\
+\leanlink{UnboundedGolden}{UnboundedGolden.golden_approximation}
+ & The golden metallic series and its three-state normal
+ continued-fraction approximation data.\\
+\leanlink{UnboundedTransfer}{UnboundedTransfer.cycle_transfer}
+ & The first-order endpoint coefficient transfer over the metallic cycle.\\
+\leanlink{UnboundedGrowth}{UnboundedGrowth.coefficient_growth}
+ & The coefficient majorant $|f_m|\le(4(n+5))^m$.\\
+\leanlink{UnboundedJacobi}{UnboundedJacobi.hankel_jacobi}
+ & The Desnanot--Jacobi identity for adjacent shifted Hankel minors.\\
+\leanlink{UnboundedStrip}{UnboundedStrip.bounded_strip}
+ & Bounded boundary rows and exponentially bounded moments give
+ explicit bounds on every intervening row.\\
+\leanlink{Unbounded}{Unbounded.normal_family, result}
+ & The normal continuants and moment relations; separately, the complete
+ large-shift unboundedness assertion.\\
+\leanlink{Blocks}{Blocks.ordinary_blocks, reversed_blocks}
+ & Ordinary block determinant $q^{2\rho}$ and trace constant $1$;
+ reversed block constant $I$; both continuant transfer laws.\\
+\leanlink{EndpointSpectral}{EndpointSpectral.transfer_spectral_remainder}
+ & The unit spectral branch controls powers of a $2\times2$ formal
+ matrix below the determinant depth.\\
+\leanlink{EndpointJets}{EndpointJets.continuant_endpoint_jets}
+ & Four endpoint polynomial laws of degree at most $h$, with
+ $h<2K\rho$ for the common reversed endpoints.\\
+\leanlink{BoundaryPolynomials}{BoundaryPolynomials.hankel_inverse_bezout}
+ & The inverse Hankel matrix as the normalized Bezout coefficient matrix,
+ under the displayed normal moment hypotheses.\\
+\leanlink{ComplementaryMinor}{ComplementaryMinor.shifted_hankel_boundary}
+ & The signed fixed-size complementary determinant from the normal
+ moment and unit-determinant hypotheses.\\
+\leanlink{QuasipolynomialDefs}{QuasipolynomialDefs: claim}
+ & The proposition of Conjecture C in the
+ \nolinkurl{Trureturing.OpenProblems.HanPedonShiftedQMetallicHankel}
+ namespace: all residues, all $m\ge0$, integer values on $\Z$.\\
+\leanlink{ResiduePolynomials}{ResiduePolynomials.result}
+ & Existence of the metallic series and that proposition for every
+ solution, every $n\ge1$ and every $\ell\ge n+3$.
+ No degree bound or modular-period formula is part of this declaration.
+ \\\bottomrule
+\end{longtable}
+\endgroup
+
+\begin{thebibliography}{9}
+\bibitem{HPplus} G.-N. Han and E. Pedon,
+\emph{Hankel determinants for the $(n+2)$-shifted $q$-metallic numbers},
+26 October 2026, \href{https://arxiv.org/abs/2610.36132v1}{arXiv:2610.36132v1}.
+\bibitem{HP} G.-N. Han and E. Pedon,
+\emph{Hankel continued fractions and Hankel determinants for $q$-deformed
+metallic numbers}, version 2, 17 January 2026 (first posted 2025),
+\href{https://arxiv.org/abs/2502.05993v2}{arXiv:2502.05993v2}.
+\bibitem{OP} V. Ovsienko and E. Pedon,
+\emph{Continued fractions for $q$-deformed real numbers,
+$\{-1,0,1\}$-Hankel determinants, and Somos--Gale--Robinson sequences},
+Adv. Appl. Math. \textbf{162} (2025), 102788,
+\href{https://doi.org/10.1016/j.aam.2024.102788}{doi:10.1016/j.aam.2024.102788};
+\href{https://arxiv.org/abs/2312.17009v2}{arXiv:2312.17009v2}.
+\bibitem{Han} G.-N. Han, \emph{Hankel continued fraction and its applications},
+Adv. Math. \textbf{303} (2016), 295--321,
+\href{https://doi.org/10.1016/j.aim.2016.08.013}{doi:10.1016/j.aim.2016.08.013};
+\href{https://arxiv.org/abs/1406.1593v1}{arXiv:1406.1593v1}.
+\bibitem{Cigler} J. Cigler,
+\emph{Shifted Hankel determinants of Catalan numbers and related results},
+2021, \href{https://arxiv.org/abs/2105.00660v1}{arXiv:2105.00660v1}.
+\bibitem{Kratt} C. Krattenthaler,
+\emph{Hankel determinants of linear combinations of moments of orthogonal
+polynomials, II}, Ramanujan J. \textbf{61} (2023), 597--627;
+\href{https://arxiv.org/abs/2101.04225v5}{arXiv:2101.04225v5} (2021).
+\bibitem{WXZ} Y. Wang, G. Xin and M. Zhai,
+\emph{Hankel determinants and shifted periodic continued fractions},
+Adv. Appl. Math. \textbf{102} (2019), 83--112;
+\href{https://arxiv.org/abs/1806.08927v2}{arXiv:1806.08927v2} (2018).
+\bibitem{Pedon} E. Pedon, \emph{Analytical properties of $q$-metallic numbers},
+version 2, 27 October 2026,
+\href{https://arxiv.org/abs/2604.19898v2}{arXiv:2604.19898v2}.
+\bibitem{OEISwall} M. Somos, \emph{Upper half of Hankel determinant number wall
+for A004148}, OEIS A123634, 4 October 2006; formulas updated
+31 December 2016, \href{https://oeis.org/A123634}{oeis.org/A123634}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,348 @@
+{
+  "nodes": [
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s1",
+      "contributor": null,
+      "identity": "collected:han-pedon-metallic-hankel-quasipolynomial:2:s1",
+      "kind": "paper",
+      "label": "Theorem",
+      "lean_source": {
+        "revision": "8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelResiduePolynomials.lean"
+      },
+      "lineage": "collected:han-pedon-metallic-hankel-quasipolynomial:s1",
+      "macros": {
+        "\\D": "\\Delta_{#1}^{(#2)}",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[q^{#1}]",
+        "\\leanlink": "\\href{https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankel#1.lean}{\\nolinkurl{#2}}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "han-pedon-metallic-hankel-quasipolynomial",
+      "scope": "in_scope",
+      "statement": "For every $n\\ge1$ and $\\ell\\ge n+3$ there are polynomials\n$Q_{\\ell,r}\\in\\Q[X]$, $0\\le r<\\rho$, such that\n\\[\n \\D{r+m\\rho}\\ell=Q_{\\ell,r}(m)\\quad(m\\ge0),\\qquad\n Q_{\\ell,r}(z)\\in\\Z\\quad(z\\in\\Z).\n\\]\nMore explicitly, set $a=\\ell-(n+1)$,\n$K_0=\\lceil(r+a)/\\rho\\rceil$, and $t=K_0\\rho-r$. Then\n\\begin{equation}\n \\deg Q_{\\ell,r}\\le t(t-a)+a(a-1),\\qquad a\\le t\\le a+\\rho-1,\n\\end{equation}\nwhere a zero polynomial satisfies any nonnegative degree bound.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Extending Han–Pedon (2026): proof of Conjecture C for metallic Hankel determinants (arXiv:2610.36132v1, p. 6)",
+      "toolchain": null,
+      "version": 2,
+      "work": "han-pedon-metallic-hankel-quasipolynomial"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s2",
+      "contributor": null,
+      "identity": "collected:han-pedon-metallic-hankel-quasipolynomial:2:s2",
+      "kind": "paper",
+      "label": "Lemma",
+      "lean_source": {
+        "revision": "8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelResiduePolynomials.lean"
+      },
+      "lineage": "collected:han-pedon-metallic-hankel-quasipolynomial:s2",
+      "macros": {
+        "\\D": "\\Delta_{#1}^{(#2)}",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[q^{#1}]",
+        "\\leanlink": "\\href{https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankel#1.lean}{\\nolinkurl{#2}}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "han-pedon-metallic-hankel-quasipolynomial",
+      "scope": "in_scope",
+      "statement": "For each $h\\ge0$, the coefficients of $x^h$ in $c,d$ from\n\\eqref{normal} are rational polynomials in $K$ of degree at most $h$.\nThe same holds for $c^*(q)=q^Nc(q^{-1})$ and\n$d^*(q)=q^Nd(q^{-1})$ whenever $h<2K\\rho$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Extending Han–Pedon (2026): proof of Conjecture C for metallic Hankel determinants (arXiv:2610.36132v1, p. 6)",
+      "toolchain": null,
+      "version": 2,
+      "work": "han-pedon-metallic-hankel-quasipolynomial"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s3",
+      "contributor": null,
+      "identity": "collected:han-pedon-metallic-hankel-quasipolynomial:2:s3",
+      "kind": "paper",
+      "label": "Lemma",
+      "lean_source": {
+        "revision": "8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelResiduePolynomials.lean"
+      },
+      "lineage": "collected:han-pedon-metallic-hankel-quasipolynomial:s3",
+      "macros": {
+        "\\D": "\\Delta_{#1}^{(#2)}",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[q^{#1}]",
+        "\\leanlink": "\\href{https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankel#1.lean}{\\nolinkurl{#2}}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "han-pedon-metallic-hankel-quasipolynomial",
+      "scope": "in_scope",
+      "statement": "Let $H=(g_{i+k})_{i,k<N}$ have determinant $1$ and let $c,d$ satisfy\n\\eqref{orth}, with $c$ monic of degree $N$ and $\\deg d<N$.\nExtend their coefficients by zero. Then\n\\begin{equation}\n (H^{-1})_{ik}=-\\sum_{v=0}^{k}\n (c_{i+k+1-v}d_v-d_{i+k+1-v}c_v).\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Extending Han–Pedon (2026): proof of Conjecture C for metallic Hankel determinants (arXiv:2610.36132v1, p. 6)",
+      "toolchain": null,
+      "version": 2,
+      "work": "han-pedon-metallic-hankel-quasipolynomial"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s4",
+      "contributor": null,
+      "identity": "collected:han-pedon-metallic-hankel-quasipolynomial:2:s4",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelResiduePolynomials.lean"
+      },
+      "lineage": "collected:han-pedon-metallic-hankel-quasipolynomial:s4",
+      "macros": {
+        "\\D": "\\Delta_{#1}^{(#2)}",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[q^{#1}]",
+        "\\leanlink": "\\href{https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankel#1.lean}{\\nolinkurl{#2}}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "han-pedon-metallic-hankel-quasipolynomial",
+      "scope": "in_scope",
+      "statement": "For fixed $n\\ge1$ and $\\ell\\ge n+3$, let $d\\ge0$ bound the degrees of\nall residue polynomials. For every integer $M\\ge1$, the sequence\n$(\\D j\\ell\\bmod M)_{j\\ge0}$ has period $\\rho M L_d$, where\n$L_d=\\operatorname{lcm}(1,\\ldots,\\max(1,d))$.\nIn particular $\\rho M d!$ is also a valid period.\nOne possible explicit bound is\n$d=a(a-1)+(a+\\rho-1)(\\rho-1)$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Extending Han–Pedon (2026): proof of Conjecture C for metallic Hankel determinants (arXiv:2610.36132v1, p. 6)",
+      "toolchain": null,
+      "version": 2,
+      "work": "han-pedon-metallic-hankel-quasipolynomial"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s5",
+      "contributor": null,
+      "identity": "collected:han-pedon-metallic-hankel-quasipolynomial:2:s5",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelResiduePolynomials.lean"
+      },
+      "lineage": "collected:han-pedon-metallic-hankel-quasipolynomial:s5",
+      "macros": {
+        "\\D": "\\Delta_{#1}^{(#2)}",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[q^{#1}]",
+        "\\leanlink": "\\href{https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankel#1.lean}{\\nolinkurl{#2}}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "han-pedon-metallic-hankel-quasipolynomial",
+      "scope": "in_scope",
+      "statement": "For every $n\\ge1$ and $\\ell\\ge0$, the sequence $(\\D j\\ell)_{j\\ge0}$\nis periodic from $j=0$ modulo every positive integer $M$.\nFor $\\ell\\le n+2$ a valid period is $\\rho$; for $\\ell\\ge n+3$ a valid\nperiod is $\\rho M L_d$, with $d,L_d$ as in Corollary~\\ref{modular}.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Extending Han–Pedon (2026): proof of Conjecture C for metallic Hankel determinants (arXiv:2610.36132v1, p. 6)",
+      "toolchain": null,
+      "version": 2,
+      "work": "han-pedon-metallic-hankel-quasipolynomial"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s6",
+      "contributor": null,
+      "identity": "collected:han-pedon-metallic-hankel-quasipolynomial:2:s6",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelResiduePolynomials.lean"
+      },
+      "lineage": "collected:han-pedon-metallic-hankel-quasipolynomial:s6",
+      "macros": {
+        "\\D": "\\Delta_{#1}^{(#2)}",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[q^{#1}]",
+        "\\leanlink": "\\href{https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankel#1.lean}{\\nolinkurl{#2}}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "han-pedon-metallic-hankel-quasipolynomial",
+      "scope": "in_scope",
+      "statement": "For fixed $n\\ge1$ and $\\ell\\ge0$, there are an integer $d\\ge0$ and\n$R\\in\\Z[z]$, with $\\deg R<\\rho(d+1)$, such that\n\\[\n \\sum_{j\\ge0}\\D j\\ell z^j=\\frac{R(z)}{(1-z^\\rho)^{d+1}}.\n\\]\nWriting $E$ for the shift $(Eu)_j=u_{j+1}$, one has\n$(E^\\rho-1)^{d+1}\\D j\\ell=0$ for every $j\\ge0$.\nOne can take $d=0$ for $\\ell\\le n+2$, and the degree bound of\nCorollary~\\ref{modular} otherwise.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Extending Han–Pedon (2026): proof of Conjecture C for metallic Hankel determinants (arXiv:2610.36132v1, p. 6)",
+      "toolchain": null,
+      "version": 2,
+      "work": "han-pedon-metallic-hankel-quasipolynomial"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s7",
+      "contributor": null,
+      "identity": "collected:han-pedon-metallic-hankel-quasipolynomial:2:s7",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelResiduePolynomials.lean"
+      },
+      "lineage": "collected:han-pedon-metallic-hankel-quasipolynomial:s7",
+      "macros": {
+        "\\D": "\\Delta_{#1}^{(#2)}",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[q^{#1}]",
+        "\\leanlink": "\\href{https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankel#1.lean}{\\nolinkurl{#2}}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "han-pedon-metallic-hankel-quasipolynomial",
+      "scope": "in_scope",
+      "statement": "For $n=1$, $\\ell=4$, and every integer $m\\ge0$, the eight polynomials are\n\\[\n\\begin{array}{c|rrrrrrrr}\nr&0&1&2&3&4&5&6&7\\\\\\hline\nQ_{4,r}(m)&1+4m&2+4m&0&-2-4m&-3-4m&-4-4m&0&4+4m\n\\end{array}\n\\]\nConsequently this sequence is unbounded and is not eventually periodic\nover $\\Z$. Modulo $M\\ge1$, a valid period is $8M/\\gcd(M,4)$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Extending Han–Pedon (2026): proof of Conjecture C for metallic Hankel determinants (arXiv:2610.36132v1, p. 6)",
+      "toolchain": null,
+      "version": 2,
+      "work": "han-pedon-metallic-hankel-quasipolynomial"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s8",
+      "contributor": null,
+      "identity": "collected:han-pedon-metallic-hankel-quasipolynomial:2:s8",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelResiduePolynomials.lean"
+      },
+      "lineage": "collected:han-pedon-metallic-hankel-quasipolynomial:s8",
+      "macros": {
+        "\\D": "\\Delta_{#1}^{(#2)}",
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[q^{#1}]",
+        "\\leanlink": "\\href{https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankel#1.lean}{\\nolinkurl{#2}}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "han-pedon-metallic-hankel-quasipolynomial",
+      "scope": "in_scope",
+      "statement": "Let $A(x)=\\sum_{s\\ge0}a_sx^s$, $a_0=1$, be the RNA secondary-structure\nseries \\textup{OEIS A004148}, satisfying\n$x^2A^2-(1-x+x^2)A+1=0$.\nThen $\\det(a_{3+i+k})_{0\\le i,k<r+8m}=Q_{4,r}(m)$, with the eight\naffine laws in Corollary~\\ref{golden}. Equivalently these laws evaluate\nthe diagonal $T(j+2,j)$ of the number wall \\textup{A123634} \\cite{OEISwall}.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Extending Han–Pedon (2026): proof of Conjecture C for metallic Hankel determinants (arXiv:2610.36132v1, p. 6)",
+      "toolchain": null,
+      "version": 2,
+      "work": "han-pedon-metallic-hankel-quasipolynomial"
+    }
+  ]
+}

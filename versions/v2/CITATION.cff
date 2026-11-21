@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "Extending Han–Pedon (2026): proof of Conjecture C for metallic Hankel determinants (arXiv:2610.36132v1, p. 6)"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-21"
+version: "2"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/han-pedon-metallic-hankel-quasipolynomial?version=2"
+license: "CC-BY-4.0"

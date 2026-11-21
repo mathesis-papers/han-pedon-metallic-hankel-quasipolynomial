@@ -1,0 +1,450 @@
+{
+  "schema_version": 1,
+  "arithmetic": "exact integers; fraction-free elimination",
+  "coverage": {
+    "cycle_identities": "1 <= n <= 40",
+    "normal_and_orthogonality": "1 <= n <= 4; K = 1, 2",
+    "boundary_identity": "1 <= n <= 4; a = 2, 3, 4; 0 <= j <= 20",
+    "endpoint_laws": "1 <= n <= 6; 0 <= h <= 4; 1 <= K <= 7",
+    "example": "n = 1, ell = 4; all eight residues; 0 <= m <= 5"
+  },
+  "counts": {
+    "cycle_parameters": 40,
+    "normal_matrices": 8,
+    "orthogonality_equations": 648,
+    "boundary_determinants": 252,
+    "endpoint_polynomial_sequences": 120
+  },
+  "golden_shift_4": [
+    {
+      "residue": 0,
+      "newton_coefficients": [
+        1,
+        4
+      ],
+      "values_m_0_through_5": [
+        1,
+        5,
+        9,
+        13,
+        17,
+        21
+      ]
+    },
+    {
+      "residue": 1,
+      "newton_coefficients": [
+        2,
+        4
+      ],
+      "values_m_0_through_5": [
+        2,
+        6,
+        10,
+        14,
+        18,
+        22
+      ]
+    },
+    {
+      "residue": 2,
+      "newton_coefficients": [
+        0,
+        0
+      ],
+      "values_m_0_through_5": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "residue": 3,
+      "newton_coefficients": [
+        -2,
+        -4
+      ],
+      "values_m_0_through_5": [
+        -2,
+        -6,
+        -10,
+        -14,
+        -18,
+        -22
+      ]
+    },
+    {
+      "residue": 4,
+      "newton_coefficients": [
+        -3,
+        -4
+      ],
+      "values_m_0_through_5": [
+        -3,
+        -7,
+        -11,
+        -15,
+        -19,
+        -23
+      ]
+    },
+    {
+      "residue": 5,
+      "newton_coefficients": [
+        -4,
+        -4
+      ],
+      "values_m_0_through_5": [
+        -4,
+        -8,
+        -12,
+        -16,
+        -20,
+        -24
+      ]
+    },
+    {
+      "residue": 6,
+      "newton_coefficients": [
+        0,
+        0
+      ],
+      "values_m_0_through_5": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "residue": 7,
+      "newton_coefficients": [
+        4,
+        4
+      ],
+      "values_m_0_through_5": [
+        4,
+        8,
+        12,
+        16,
+        20,
+        24
+      ]
+    }
+  ],
+  "golden_polynomial_identities": [
+    {
+      "residue": 0,
+      "complementary_dimension": 8,
+      "degree_bound": 50,
+      "constant": 1,
+      "slope": 4,
+      "values_m_0_through_degree_bound": [
+        1,
+        5,
+        9,
+        13,
+        17,
+        21,
+        25,
+        29,
+        33,
+        37,
+        41,
+        45,
+        49,
+        53,
+        57,
+        61,
+        65,
+        69,
+        73,
+        77,
+        81,
+        85,
+        89,
+        93,
+        97,
+        101,
+        105,
+        109,
+        113,
+        117,
+        121,
+        125,
+        129,
+        133,
+        137,
+        141,
+        145,
+        149,
+        153,
+        157,
+        161,
+        165,
+        169,
+        173,
+        177,
+        181,
+        185,
+        189,
+        193,
+        197,
+        201
+      ]
+    },
+    {
+      "residue": 1,
+      "complementary_dimension": 7,
+      "degree_bound": 37,
+      "constant": 2,
+      "slope": 4,
+      "values_m_0_through_degree_bound": [
+        2,
+        6,
+        10,
+        14,
+        18,
+        22,
+        26,
+        30,
+        34,
+        38,
+        42,
+        46,
+        50,
+        54,
+        58,
+        62,
+        66,
+        70,
+        74,
+        78,
+        82,
+        86,
+        90,
+        94,
+        98,
+        102,
+        106,
+        110,
+        114,
+        118,
+        122,
+        126,
+        130,
+        134,
+        138,
+        142,
+        146,
+        150
+      ]
+    },
+    {
+      "residue": 2,
+      "complementary_dimension": 6,
+      "degree_bound": 26,
+      "constant": 0,
+      "slope": 0,
+      "values_m_0_through_degree_bound": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "residue": 3,
+      "complementary_dimension": 5,
+      "degree_bound": 17,
+      "constant": -2,
+      "slope": -4,
+      "values_m_0_through_degree_bound": [
+        -2,
+        -6,
+        -10,
+        -14,
+        -18,
+        -22,
+        -26,
+        -30,
+        -34,
+        -38,
+        -42,
+        -46,
+        -50,
+        -54,
+        -58,
+        -62,
+        -66,
+        -70
+      ]
+    },
+    {
+      "residue": 4,
+      "complementary_dimension": 4,
+      "degree_bound": 10,
+      "constant": -3,
+      "slope": -4,
+      "values_m_0_through_degree_bound": [
+        -3,
+        -7,
+        -11,
+        -15,
+        -19,
+        -23,
+        -27,
+        -31,
+        -35,
+        -39,
+        -43
+      ]
+    },
+    {
+      "residue": 5,
+      "complementary_dimension": 3,
+      "degree_bound": 5,
+      "constant": -4,
+      "slope": -4,
+      "values_m_0_through_degree_bound": [
+        -4,
+        -8,
+        -12,
+        -16,
+        -20,
+        -24
+      ]
+    },
+    {
+      "residue": 6,
+      "complementary_dimension": 2,
+      "degree_bound": 2,
+      "constant": 0,
+      "slope": 0,
+      "values_m_0_through_degree_bound": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "residue": 7,
+      "complementary_dimension": 9,
+      "degree_bound": 65,
+      "constant": 4,
+      "slope": 4,
+      "values_m_0_through_degree_bound": [
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52,
+        56,
+        60,
+        64,
+        68,
+        72,
+        76,
+        80,
+        84,
+        88,
+        92,
+        96,
+        100,
+        104,
+        108,
+        112,
+        116,
+        120,
+        124,
+        128,
+        132,
+        136,
+        140,
+        144,
+        148,
+        152,
+        156,
+        160,
+        164,
+        168,
+        172,
+        176,
+        180,
+        184,
+        188,
+        192,
+        196,
+        200,
+        204,
+        208,
+        212,
+        216,
+        220,
+        224,
+        228,
+        232,
+        236,
+        240,
+        244,
+        248,
+        252,
+        256,
+        260,
+        264
+      ]
+    }
+  ],
+  "modular_newton_identities": {
+    "identities": 8100,
+    "degrees": "0 <= d <= 8",
+    "moduli": "1 <= M <= 20",
+    "arguments": "-4 <= m <= 4",
+    "basis_orders": "0 <= v <= d",
+    "step": "M*lcm(1,...,max(1,d))"
+  },
+  "rna_determinant_identities": {
+    "identities": 48,
+    "coefficient_series": "x^2*A^2-(1-x+x^2)*A+1=0; A(0)=1",
+    "coverage": "third coefficient shift; all residues modulo 8; 0 <= m <= 5",
+    "identity": "Delta_j^(4)(Phi_1) = det(a_(3+i+k))_(i,k<j)"
+  },
+  "interpretation": "Finite exact identities in the stated ranges. The 220 golden identities and the written degree bound prove the eight affine laws for all m >= 0. The other all-parameter arguments are written in note.tex.",
+  "checker_sha256": "4ba161e1983c08ee6d6d4cffc4edec524c1d1d186f28262a4578332b76b72b4b"
+}
