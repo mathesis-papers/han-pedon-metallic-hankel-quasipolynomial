@@ -31,6 +31,7 @@
     "concept_doi": "10.5281/zenodo.24404937",
     "current_version": 2,
     "doi": "10.5281/zenodo.24404938",
+    "kind": "note",
     "lean_source": {
       "revision": "8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f",
       "url": "https://github.com/the-omega-institute/trureturing/blob/8c7bbde1c8750c7c307bdc6bc62f44c94b7b2c7f/D5/S3/Combinatorics/MetallicHankel/MetallicHankelResiduePolynomials.lean"
@@ -55,10 +56,12 @@
     "title": "Extending Han–Pedon (2026): proof of Conjecture C for metallic Hankel determinants (arXiv:2610.36132v1, p. 6)",
     "versions": [
       {
+        "changelog": null,
         "previous_version": null,
         "published_on": "2026-11-21T12:36:44.124601068Z",
         "revision": "2",
-        "version": 2
+        "version": 2,
+        "version_label": null
       }
     ],
     "work": "han-pedon-metallic-hankel-quasipolynomial"
